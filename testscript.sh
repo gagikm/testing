@@ -13,6 +13,9 @@ then
     git pull
     git checkout -b release-$1 develop
     git commit -m "Release-$1" || true
+    echo
+    echo
+    echo
   fi
 
   read -p "Merge release branch into master?" -r
@@ -24,6 +27,11 @@ then
     git tag Release-$1
     git push
     echo "Master branch is now ready to be deployed."
+    echo
+    echo "IMPORTANT: Deploy master branch before continuing."
+    echo
+    echo
+    echo
   fi
 
   read -p "Merge release branch into develop?" -r
@@ -33,6 +41,9 @@ then
     git checkout develop
     git merge --no-edit --no-ff release-$1
     git push
+    echo
+    echo
+    echo
   fi
 
   read -p "Delete release branch?" -r
