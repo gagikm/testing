@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-read -p "Ready to begin release process for Release $1?" -r
+read -p "Ready to begin release process for Release $1? " -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
