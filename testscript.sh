@@ -12,7 +12,7 @@ then
     git checkout develop
     git pull
     git checkout -b release-$1 develop
-    git commit -a -m "Release-$1"
+    git commit --quiet -a -m "Release-$1" || true
   fi
 
   read -p "Merge release branch into master?" -r
