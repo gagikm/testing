@@ -12,7 +12,7 @@ then
     git checkout develop
     git pull
     git checkout -b release-$1 develop
-    git commit -a -m "Release-$1"
+    git commit -m "Release-$1" || true
   fi
 
   read -p "Merge release branch into master?" -r
@@ -21,7 +21,7 @@ then
   then
     git checkout master
     git merge --no-ff release-$1
-    git tag -a Release-$1
+    git tag Release-$1
     git push
     echo "Master branch is now ready to be deployed."
   fi
