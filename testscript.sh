@@ -5,7 +5,7 @@ read -p "Ready to begin release process for Release $1?" -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  read -p "Create release branch from develop?" -r
+  read -p "Create release branch from develop? " -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
@@ -15,10 +15,9 @@ then
     git commit -m "Release-$1" || true
     echo
     echo
-    echo
   fi
 
-  read -p "Merge release branch into master?" -r
+  read -p "Merge release branch into master? " -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
@@ -31,10 +30,9 @@ then
     echo "IMPORTANT: Deploy master branch before continuing."
     echo
     echo
-    echo
   fi
 
-  read -p "Merge release branch into develop?" -r
+  read -p "Merge release branch into develop? " -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
@@ -43,10 +41,9 @@ then
     git push
     echo
     echo
-    echo
   fi
 
-  read -p "Delete release branch?" -r
+  read -p "Delete release branch? " -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
